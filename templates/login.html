@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <!-- Login Form (from first HTML) -->
+            <form method="POST" class="sign-in-form">
+              <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png')}}" alt="easyclass" />
+                <h4>EDULA</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Login</h2>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <label for="tipo">Tipo de usuário:</label><br>
+                  <select name="tipo" id="tipo">
+                    <option value="user">Usuário</option>
+                    <option value="professor">Professor</option>
+                  </select><br><br>
+                </div>
+
+                <div class="input-wrap">
+                  <label for="matricula_cpf">Matrícula ou CPF:</label><br>
+                  <input
+                    type="text"
+                    id="matricula_cpf"
+                    name="matricula_cpf"
+                    required
+                    class="input-field"
+                  /><br><br>
+                </div>
+
+                <div class="input-wrap">
+                  <label for="senha">Senha:</label><br>
+                  <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    required
+                    class="input-field"
+                  /><br><br>
+                </div>
+                <a href="{{ url_for('cadastro_user') }}">Cadastrar Usuário</a><br>
+                <a href="{{ url_for('cadastro_professor') }}">Cadastrar Professor</a>
+
+                <input type="submit" value="Entrar" class="sign-btn" />
+              </div>
+            </form>
+
+            <!-- Registration Form (from second HTML) -->
+            <form action="index.html" autocomplete="off" class="sign-up-form">
+              <div class="logo">
+                <img src="./img/logo.png" alt="easyclass" />
+                <h4>TecAlchemy</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Faça seu Cadastro</h2>
+                <h6>Fez seu Cadastro?</h6>
+                <a href="#" class="toggle">Login</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Nome</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Senha</label>
+                </div>
+
+                <input type="submit" value="Cadastro" class="sign-btn" />
+
+                <p class="text">
+                  Aceite os termos de serviço
+                  <a href="#">Termos de serviço</a> e
+                  <a href="#">Politica Privada</a>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="{{ url_for('static', filename='img/image1.png')}}" class="image img-1 show" alt="" />
+              <img src="{{ url_for('static', filename='img/image2.png')}}" class="image img-2" alt="" />
+              <img src="{{ url_for('static', filename='img/image3.png')}}" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Crie seu projetos</h2>
+                  <h2>E colocaremos ele aqui!</h2>
+                  <h2>Site Criado para ajuda-lo!</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Javascript file -->
+    <script src="{{ url_for('static', filename='js/app.js')}}"></script>
+  </body>
+</html>

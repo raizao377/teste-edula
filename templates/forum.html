@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Fórum Online</h1>
+        <nav>
+            <a href="{{ url_for('logout') }}">Sair</a>
+            <a href="{{ url_for('area_user') }}">Área do Usuário</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Criar Tópico</h2>
+            <form action="{{ url_for('forum') }}" method="POST">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="conteudo">Conteúdo:</label>
+                <textarea id="conteudo" name="conteudo" rows="5" required></textarea>
+
+                <button type="submit">Criar Tópico</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Tópicos Recentes</h2>
+            <ul>
+                {% for topico in topicos %}
+                    <li>
+                        <h3>{{ topico[0] }}</h3>
+                        <p><strong>Por:</strong> {{ topico[2] }}</p>
+                        <p>{{ topico[1] }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

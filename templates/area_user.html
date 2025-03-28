@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cod.aluno.css')}}">
+    <title>Área do Usuário - Edula</title>
+</head>
+<body>
+    <div class="navbar">
+        <h2><span>EDULA.com</span></h2>
+        <p>Olá, {{ nome }}. Bem-vindo à sua área personalizada.</p>
+        <ul>
+            <li><a href="INICIO.html">Início</a></li>
+            <li id="link1"><a href="provas_disponiveis">Avaliação Diagnóstica</a></li>
+            <li id="link2"><a href="#">Material de Apoio</a></li>
+            <li id="link3"><a href="chat">Consultar a IA</a></li>
+        </ul>
+    </div>
+
+    <div class="user-area">
+    
+        <p class="title">Aprenda com mais facilidade através do Edula.</p>
+        <p class="subtitle">O Edula vai ajudar você a ter um melhor desempenho na escola.</p>
+        <img src="{{ url_for('static', filename='img/logo.png')}}">
+    </div>
+
+    <div class="guarantee">
+        <div class="item">
+            <div class="icon"><i class='bx bx-book-bookmark'></i></div>
+            <div class="info"><p>Avaliações Diagnósticas</p></div>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+        <div class="item">
+            <div class="icon"><i class='bx bxs-package'></i></div>
+            <div class="info"><p>Material de Apoio</p></div>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+        <div class="item" onclick="window.location.href='chat'">
+            <div class="icon"><i class='bx bx-shape-triangle'></i></div>
+            <div class="info"><p>Consultar a IA</p></div>
+            <i class='bx bx-chevron-right'></i>
+        </div>
+    </div>
+
+    <div class="about">
+        <img src="{{ url_for('static', filename='img/webinar-animate Mulher.svg')}}">
+        <div class="info">
+            <h3>Agradecemos sua preferência!</h3>
+            <p>Vivemos em uma era em que a tecnologia desempenha um papel fundamental na educação. O EDULA combina inovação tecnológica e excelência educacional, personalizando o aprendizado para cada aluno.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="start">
+            <h3>Dica bônus</h3>
+            <p>Estude mais com o Edula! Continuaremos aprimorando a plataforma para oferecer a melhor experiência de ensino.</p>
+        </div>
+        <div class="cols">
+            <div class="about-col">
+                <h3>EDULA.com</h3>
+                <p>O site de ensino-aprendizagem</p>
+            </div>
+            <div class="news-col">
+                <h4>Notificações</h4>
+                <p>Coloque seu número de telefone para receber informações.</p>
+                <form>
+                    <input type="text" placeholder="Digite seu telefone">
+                    <button><i class='bx bxl-telegram'></i></button>
+                </form>
+                <div class="copyright">
+                    Copyright © 2024 Edula. Site de Ensino-Aprendizagem.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simulação de nome do usuário - pode ser substituído por backend
+        document.getElementById("user-name").textContent = "{{ user_name }}";
+    </script>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Usuário</title>
+</head>
+<body>
+    <h2>Bem-vindo à Área do Usuário!</h2>
+    <p>Olá, {{ nome }}. Bem-vindo à sua área personalizada.</p>
+    <a href="/logout">Sair</a>
+
+
+    <h2>Suas Provas</h2>
+    <ul>
+        {% for prova in provas %}
+            <li>{{ prova[1] }} - {{ prova[2] }} (Tipo: {{ prova[3] }})</li>
+            <a href="{{ url_for('responder_prova', prova_id=prova[0]) }}">Responder</a>
+        {% endfor %}
+    </ul>
+    

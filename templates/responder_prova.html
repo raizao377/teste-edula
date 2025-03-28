@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responder Prova</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responder.css')}}" />
+</head>
+<body>
+    <h1>Responder Prova: {{ prova[1] }}</h1>
+    <p><strong>Descrição:</strong> {{ prova[2] }}</p>
+
+    <form method="POST">
+        {% if prova[3] == 'aberta' %}
+            <label>Sua Resposta:</label><br>
+            <textarea name="resposta" required></textarea><br>
+        {% else %}
+            <label>Escolha a alternativa:</label><br>
+            <input type="radio" name="alternativa" value="A"> A<br>
+            <input type="radio" name="alternativa" value="B"> B<br>
+            <input type="radio" name="alternativa" value="C"> C<br>
+            <input type="radio" name="alternativa" value="D"> D<br>
+        {% endif %}
+
+        <button type="submit">Enviar Resposta</button>
+    </form>
+
+    <a href="{{ url_for('area_user') }}">Voltar</a>
+</body>
+</html>

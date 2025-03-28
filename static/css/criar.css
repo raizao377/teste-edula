@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000; /* Fundo preto */
+    --main-color: #00ff88; /* Cor principal */
+    --second-color: #fff;  /* Cor para texto */
+    --input-bg: #333; /* Fundo dos inputs */
+    --input-border: #555; /* Cor da borda dos inputs */
+    --input-focus: #00ff88; /* Cor ao focar nos inputs */
+    --button-bg: #00ff88; /* Cor do botão */
+    --button-hover: #00cc7a; /* Cor do botão ao passar o mouse */
+    --text-color: #fff; /* Cor do texto */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 5rem 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    font-size: 5rem; /* Tamanho maior do logo */
+    color: #00ff88; /* Verde */
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+form {
+    background-color: #222;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--input-focus);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+button {
+    padding: 1.6rem;
+    font-size: 1.8rem;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+}
+
+.checkbox-container input {
+    margin: 0;
+}
+
+.checkbox-container label {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+a {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    margin-top: 3rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--button-hover);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 3rem 5%;
+    }
+
+    .logo {
+        font-size: 4rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    form {
+        padding: 2.5rem;
+    }
+
+    label {
+        font-size: 1.4rem;
+    }
+
+    input, select, textarea {
+        font-size: 1.4rem;
+    }
+
+    button {
+        font-size: 1.6rem;
+    }
+
+    a {
+        font-size: 1.4rem;
+    }
+
+    .checkbox-group {
+        align-items: flex-start;
+    }
+
+    .checkbox-container {
+        width: 100%;
+    }
+}

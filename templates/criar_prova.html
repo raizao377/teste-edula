@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Prova</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/criar.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">EDULA.com</h1>
+        <h2>Criar Prova</h2>
+    </div>
+
+    <form method="POST">
+        <label>Nome da Prova:</label>
+        <input type="text" name="nome" required><br>
+
+        <label>Descrição:</label>
+        <textarea name="descricao"></textarea><br>
+
+        <label>Tipo:</label>
+        <select name="tipo">
+            <option value="aberta">Aberta</option>
+            <option value="multipla">Múltipla Escolha</option>
+        </select><br>
+
+        <label>Selecionar Alunos:</label><br>
+        <div class="checkbox-group">
+            {% for aluno in alunos %}
+                <div class="checkbox-container">
+                    <input type="checkbox" name="alunos" value="{{ aluno[0] }}">
+                    <label>{{ aluno[1] }}</label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button type="submit">Criar Prova</button>
+    </form>
+    <a href="{{ url_for('area_professor') }}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000; /* Fundo preto */
+    --main-color: #00ff88; /* Cor principal */
+    --second-color: #fff;  /* Cor para texto */
+    --input-bg: #333; /* Fundo dos inputs */
+    --input-border: #555; /* Cor da borda dos inputs */
+    --input-focus: #00ff88; /* Cor ao focar nos inputs */
+    --button-bg: #00ff88; /* Cor do botão */
+    --button-hover: #00cc7a; /* Cor do botão ao passar o mouse */
+    --text-color: #fff; /* Cor do texto */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+li {
+    background-color: #222;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+strong {
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+a {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    display: inline-block;
+    margin-top: 1rem;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--button-hover);
+}
+
+p {
+    font-size: 1.8rem;
+    color: var(--second-color);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+a[href*="area_user"] {
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    display: block;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 3rem 2%;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    li {
+        padding: 1.5rem;
+    }
+
+    strong {
+        font-size: 1.8rem;
+    }
+
+    a {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    a[href*="area_user"] {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #1e1e1e;
+    --second-bg-color: #292929;
+    --text-color: #fff;
+    --main-color: #00ff88;
+    --hover-color: #00cc7a;
+    --input-bg: #333;
+    --input-border: #444;
+    --button-bg: #00ff88;
+    --button-hover: #00cc7a;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+
+header {
+    background-color: var(--second-bg-color);
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+
+nav a {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--main-color);
+}
+
+main {
+    padding: 5rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    background-color: var(--second-bg-color);
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+form input, form textarea {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--input-border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+form button {
+    background-color: var(--button-bg);
+    color: var(--second-bg-color);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--button-hover);
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section ul li {
+    background-color: var(--second-bg-color);
+    padding: 2rem;
+    margin-bottom: 1.6rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+section ul li:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+section ul li h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+section ul li p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+section ul li p strong {
+    color: var(--main-color);
+}
+
+footer {
+    padding: 2rem 10%;
+    text-align: center;
+    background-color: var(--second-bg-color);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-top: 5rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 3rem 5%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    form label {
+        font-size: 1.4rem;
+    }
+
+    form input, form textarea {
+        font-size: 1.4rem;
+    }
+
+    form button {
+        font-size: 1.6rem;
+    }
+
+    section ul li h3 {
+        font-size: 1.8rem;
+    }
+
+    section ul li p {
+        font-size: 1.4rem;
+    }
+}

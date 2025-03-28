@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respostas da Prova</title>
+</head>
+<body>
+    <h1>Respostas dos Alunos</h1>
+
+    {% if respostas %}
+        <ul>
+            {% for resposta in respostas %}
+                <li>
+                    <strong>{{ resposta[0] }}</strong> - 
+                    {% if resposta[2] == 'aberta' %}
+                        <p>Resposta: {{ resposta[1] }}</p>
+                    {% else %}
+                        <p>Alternativa Selecionada: {{ resposta[3] }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhuma resposta enviada ainda.</p>
+    {% endif %}
+
+    <a href="{{ url_for('area_professor') }}">Voltar</a>
+</body>
+</html>

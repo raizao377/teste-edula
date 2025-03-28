@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --main-color: #00ff88;
+    --second-color: #fff;
+    --input-bg: #333;
+    --input-border: #555;
+    --input-focus: #00ff88;
+    --button-bg: #00ff88;
+    --button-hover: #00cc7a;
+    --text-color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    background-color: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--second-color);
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: var(--input-focus);
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+a {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    text-align: center;
+    margin-top: 3rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--button-hover);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 3rem 2%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    textarea {
+        font-size: 1.4rem;
+    }
+
+    label {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+
+    a {
+        font-size: 1.4rem;
+    }
+}

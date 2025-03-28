@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provas Disponíveis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/alunosss.css') }}">
+</head>
+<body>
+    <h2>Provas Disponíveis</h2>
+    
+    {% if provas %}
+        <ul>
+            {% for prova in provas %}
+                <li>
+                    <strong>{{ prova[1] }}</strong> - {{ prova[2] }} <br>
+                    Tipo: {{ prova[3] }} <br>
+                    <a href="{{ url_for('responder_prova', prova_id=prova[0]) }}">Responder Prova</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Você não tem provas disponíveis no momento.</p>
+    {% endif %}
+    
+    <br>
+    <a href="{{ url_for('area_user') }}">Voltar para a Área do Aluno</a>
+</body>
+</html>

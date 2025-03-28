@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.
+    css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style inicio.css')}}">
+    <title>Seja bem vindo(a) ao Edula!</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            
+                <img src="{{ url_for('static', filename='css/img/logo.png')}}">>
+            </a>
+        </div>
+    
+        <ul class="nav-links">
+            <li class="link"><a href="#">Inicio</a></li>
+            <li id="link1" class="link"><a href="#">Área do aluno</a></li>
+            <li id="link2" class="link"><a href="#">Área do professor</a></li>
+            <li id="btlog"  class="link"><a href="login.html">Login</a></li>   
+            <div class="menu-container">
+                <button class="menu-button" id="closer" onclick="toggleMenu()">Menu</button>
+                <div class="menu-content" id="menuContent">
+                    <a href="{{ url_for('login_aluno') }}">Login Aluno</a>
+                    <a href="#option2">Login Professor</a>
+                    <a href="#option3">Opção 3</a>
+                </div>
+            </ul>
+        </ul>
+    </nav>
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <H1>Bem vindo ao <span>Edula</span>.</H1>
+            <p>
+                Edula é uma plataforma tecnológica educacional adaptativa
+                integrada com inteligência artificial IA. 
+                Com o objetivo de auxiliar professores e alunos 
+                no processo de Ensino-Aprendizagem.
+            </p>
+        </div>
+        <div class="imagens">
+            <img src="{{ url_for('static', filename='img/web.svg')}}">
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="header">INFORMAÇÕES SOBRE ÁREA DO ALUNO</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="ri-inbox-unarchive-line"></i></span>
+                <h4>Avaliações em quiz</h4>
+                <p>    
+                    Se voce tem dificuldade em alguma matéria, voce pode responder uma avaliação que o seu professor irá te mandar. Assim voce pode desenvolver seu conhecimento a colocar em prática oque voce aprendeu.
+                </p>
+            </div>
+            <div class="card">
+                <span><i class="ri-git-repository-fill"></i></span>
+                <h4>Materiais de apoio</h4>
+                <p>
+                    Voce pode estudar antes de fazer sua avaliação com materiais de suporte para te ajudar a ter uma boa nota na correção da sua avaliação, o professor poderá fornecer esses conteúdos.
+                </p>
+            </div>
+
+            <div class="card">
+                <span><i class="ri-git-repository-fill"></i></span>
+                <h4>Consultar a IA</h4>
+                <p>
+                    Se voce aluno teve em alguma duvida em alguma questão da avaliação, voce pode fazer perguntas a Inteligencia Artificial do Edula, um chatbot feito exclusivamente para te ajudar.
+                </p>
+            </div>
+    
+    </section>
+
+    <section class="container">
+        <h2 class="header">INFORMAÇÕES SOBRE ÁREA DO PROFESSOR</h2>
+        <p class="sub-header">
+            Sabemos que a vida do educador não é simples
+            e cheia de adversidades, mas o Edula veio para transformar a forma dos 
+            professores ensinarem em sala de aula. Querido professor, seja bem vindo ao Edula!
+        </p>
+
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h4>Aulas mais interativas</h4>
+                    <h3><i class="ri-bubble-chart-line"></i></h3>
+                    <p>
+                        <i class="ri-bubble-chart-line"></i>
+                        Você pode criar aulas mais interessantes e práticas sem
+                        muito esforço, e assim ajudando os alunos a terem
+                        um bom.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Avaliações do aluno</h4>
+                    <h3><i class="ri-bubble-chart-line"></i></h3>
+                    <p>
+                        <i class="ri-bubble-chart-line"></i>
+                        Teste o nível de conhecimento dos seus alunos na sala de aula 
+                        através avaliações diágnosticas simples.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>Relatório do aluno</h4>
+                    <h3><i class="ri-bubble-chart-line"></i></h3>
+                    <p>
+                        <i class="ri-bubble-chart-line"></i>
+                        Você pode ver um pequeno relatório do aluno, 
+                        e assim saber se o aluno está com um bom conhecimento
+                        sobre determinado assunto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <div class="column">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png')}}">
+            </div>
+            <p>
+                "Portanto, que a educação nunca deixe de ser prioridade nas nossas vidas,
+                 por que a educação transforma".
+            </p>
+        </div>
+     </footer>
+
+        <div class="copyright">
+            Copyright © 2024 Edula. Site de Ensino-Aprendizagem.
+        </div>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            var menuContent = document.getElementById('menuContent');
+            if (menuContent.style.display === 'block') {
+                menuContent.style.display = 'none';
+            } else {
+                menuContent.style.display = 'block';
+            }
+        }
+        // Fecha o menu se o usuário clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var menuContent = document.getElementById('menuContent');
+                if (menuContent.style.display === 'block') {
+                    menuContent.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
