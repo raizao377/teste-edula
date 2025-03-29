@@ -16,6 +16,13 @@ app.secret_key = 'sua_chave_secreta_aqui'  # Substitua por uma chave real
 def connect_db():
     return pymysql.connect(host=host, user=user, password=password, database=database)
 
+# Página inicial
+@app.route('/')
+def inicio():
+    return render_template('INICIO.html')
+
+
+
 # Página de login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -284,10 +291,7 @@ def ver_provas():
 
 
 
-# Página inicial
-@app.route('/')
-def inicio():
-    return render_template('INICIO.html')
+
 
 
 @app.route('/chat')
