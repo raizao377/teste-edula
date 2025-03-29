@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, redirect, url_for, session
 app = Flask(__name__)
 
 # Configurações de conexão
-host = "localhost"
+host = "3306"
 user = "root"
 password = "12052007"  # Coloque a senha se tiver, ou deixe vazio se não tiver
 database = "edulaa"
